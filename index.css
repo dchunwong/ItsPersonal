@@ -1,0 +1,86 @@
+
+body{
+	font-family: 'Roboto', sans-serif;
+	background-image: url(tile.png);
+	background-repeat: repeat;
+	background-attachment: fixed;
+}
+.quote{
+	font-size: 1em;
+	font-family: 'Vollkorn', serif;
+	padding-left: .2em;
+}
+
+h1{
+	font-family:'Julius Sans One', sans-serif;
+	font-size: 4em;
+	margin-bottom: 5px;
+	margin-top: 0px;
+	text-align: left;
+	}
+
+.secret{
+	-webkit-transition: -webkit-box-shadow 1s ease-in;
+	-moz-transition: -moz-box-shadow 1s ease-in;
+	-o-transition: -moz-box-shadow 1s ease-in;
+	transition: box-shadow 1s ease-in;	}
+.secret:hover{
+	box-shadow: 21px 21px 0px 0px #999;
+}
+h2{
+	padding-top:5px;
+	padding-right:10px;
+	padding-left: .2em;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+
+.cont{
+	position: relative;                                                                                              
+	width: 35em;
+	left:50%;
+	margin-left:-17.5em;
+	vertical-align: middle;
+	padding:10px;
+	margin-bottom: 15px;
+	background-color: white;
+	-moz-box-shadow: 10px 10px 0px 0px #999;
+	-webkit-box-shadow: 10px 10px 0px 0px #999;
+	-o-box-shadow: 10px 10px 0px 0px #999;
+	box-shadow: 10px 10px 0px 0px #999;
+}
+
+#cats{
+	font-family:'Roboto', sans-serif;
+	text-decoration: none;
+	color: #88c0c5;
+	position: relative;
+	-webkit-transition: -webkit-box-shadow .1s ease-in, color .1s ease-in;
+	-moz-transition: -moz-box-shadow .1s ease-in, color .1s ease-in;
+	-o-transition: -moz-box-shadow .1s ease-in, color .1s ease-in;
+	transition: box-shadow .1s ease-in, color .1s ease-in;	
+}
+#cats:hover {
+	color: #99D8DE;
+	position: relative;
+	outline-style: solid;
+	outline-color:#E8E8E8;
+	outline-width: 1px;
+	box-shadow: 3px 3px 0px 0px #999;
+
+}
+
+#project{
+	font-family: 'Julius Sans One', sans-serif;
+}
+
+.projects{
+	text-align: center;
+}
+.tilde{
+	line-height: 50%;
+}
+.content{
+	text-align: left;
+	padding: 10px;
