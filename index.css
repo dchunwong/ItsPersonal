@@ -139,6 +139,7 @@ nav ul{
 	text-align: left;
 	padding: .2em;
 	z-index: -1;
+	line-height: 1.5;
 }
 
 .contact{
