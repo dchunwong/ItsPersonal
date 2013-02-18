@@ -1,0 +1,109 @@
+
+body{
+	font-family: 'Roboto', sans-serif;
+	background-image: url(tile.png);
+	background-repeat: repeat;
+	background-attachment: fixed;
+}
+.quote{
+	font-size: 1em;
+	font-family: 'Vollkorn', serif;
+	padding-left: .2em;
+}
+
+h1{
+	font-family:'Julius Sans One', sans-serif;
+	font-size: 1em;
+	margin-bottom: 5px;
+	margin-top: 0px;
+	text-align: left;
+	}
+
+h2{
+	padding-top:5px;
+	padding-right:10px;
+	padding-left: .2em;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+
+.cont{
+	position: relative;                                                                                              
+	width: 35em;
+	left:50%;
+	margin-left:-17.5em;
+	vertical-align: middle;
+	padding:10px;
+	margin-bottom: 15px;
+	background-color: white;
+	box-shadow: 10px 10px 0px 0px #999;
+}
+
+.cats{
+	text-decoration: none;
+	color: #88c0c5;
+	position: relative;
+	padding-right: 5px;
+
+}
+a:hover {
+	color: #99D8DE;
+	position: relative;
+	outline-style: solid;
+	outline-color:#E8E8E8;
+	outline-width: 1px;
+
+}
+nav ul li > ul{
+	margin:0px;
+	visibility: visible;
+	opacity: 1;
+	background-color: white;
+	padding-left: 2px;
+	outline-style: solid;
+	outline-color:#E8E8E8;
+	outline-width: 1px;
+}
+
+nav ul ul li{
+	float: none;
+}
+nav ul li{
+	float:left;
+	margin-right: .2em;
+}
+nav ul{
+	display: inline-table;
+	list-style: none;
+	margin:0px;
+	padding: 0em;
+}
+#project{
+	font-family: 'Julius Sans One', sans-serif;
+}
+
+.projects{
+	text-align: center;
+}
+.tilde{
+	line-height: 50%;
+}
+.content{
+	text-align: left;
+	padding: .2em;
+	z-index: -1;
+	font-size: 16px;
+}
+
+.contact{
+	color: #99D8DE;
+	text-decoration: none;
+}
+nav ul li ul:hover .contact{
+	color:#A2E4EB;
+}
+#contact{
+	text-decoration: none;
+	color: #88c0c5;
+}

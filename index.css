@@ -49,28 +49,80 @@ h2{
 	-webkit-box-shadow: 10px 10px 0px 0px #999;
 	-o-box-shadow: 10px 10px 0px 0px #999;
 	box-shadow: 10px 10px 0px 0px #999;
+	-webkit-transition: height 1s ease-out;
 }
 
-#cats{
-	font-family:'Roboto', sans-serif;
+.cats{
 	text-decoration: none;
 	color: #88c0c5;
 	position: relative;
+	padding-right: 5px;
+
 	-webkit-transition: -webkit-box-shadow .1s ease-in, color .1s ease-in;
 	-moz-transition: -moz-box-shadow .1s ease-in, color .1s ease-in;
 	-o-transition: -moz-box-shadow .1s ease-in, color .1s ease-in;
 	transition: box-shadow .1s ease-in, color .1s ease-in;	
 }
-#cats:hover {
+.cats:hover {
 	color: #99D8DE;
 	position: relative;
 	outline-style: solid;
 	outline-color:#E8E8E8;
 	outline-width: 1px;
 	box-shadow: 3px 3px 0px 0px #707070;
+	-webkit-box-shadow: 3px 3px 0px 0px #707070;
+	-moz-box-shadow: 3px 3px 0px 0px #707070;
+	-o-box-shadow: 3px 3px 0px 0px #707070;
 
 }
+nav ul li > ul{
+	margin:0px;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: visibility 0s linear .1s, opacity .1s linear;
+	-moz-transition: visibility 0s linear .1s, opacity .1s linear;
+	-o-transition: visibility 0s linear .1s, opacity .1s linear;
+	transition: visibility 0s linear .1s, opacity .1s linear;
+	position: absolute;
+	background-color: white;
+	padding-left: 2px;
+	box-shadow: 3px 3px 0px 0px #707070;
+	-webkit-box-shadow: 3px 3px 0px 0px #707070;
+	-moz-box-shadow: 3px 3px 0px 0px #707070;
+	-o-box-shadow: 3px 3px 0px 0px #707070;
+}
 
+nav ul li:hover > ul{
+	visibility: visible;
+	opacity: .98;
+	outline-style: solid;
+	outline-color:#E8E8E8;
+	outline-width: 1px;
+	transition-delay:0s;
+	-webkit-transition: -webkit-box-shadow .1s ease-in;
+	-moz-transition: -moz-box-shadow .1s ease-in;
+	-o-transition: -moz-box-shadow .1s ease-in;
+	transition: box-shadow .1s ease-in;
+}
+nav ul li ul:hover{
+	box-shadow: 5px 5px 0px 0px #707070;
+	-webkit-box-shadow: 5px 5px 0px 0px #707070;
+	-moz-box-shadow: 5px 5px 0px 0px #707070;
+	-o-box-shadow: 5px 5px 0px 0px #707070;
+}
+nav ul ul li{
+	float: none;
+}
+nav ul li{
+	float:left;
+	margin-right: .2em;
+}
+nav ul{
+	display: inline-table;
+	list-style: none;
+	margin:0px;
+	padding: 0em;
+}
 #project{
 	font-family: 'Julius Sans One', sans-serif;
 }
@@ -84,4 +136,19 @@ h2{
 .content{
 	text-align: left;
 	padding: .2em;
+	z-index: -1;
+}
+
+.contact{
+	color: #99D8DE;
+	text-decoration: none;
+	font-size: .75em;
+}
+nav ul li ul:hover .contact{
+	color:#A2E4EB;
+	outline-style: none;
+}
+#contact{
+	text-decoration: none;
+	color: #88c0c5;
 }
