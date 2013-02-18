@@ -4,6 +4,7 @@ body{
 	background-image: url(tile.png);
 	background-repeat: repeat;
 	background-attachment: fixed;
+	color: #444;
 }
 .quote{
 	font-size: 1em;
@@ -17,6 +18,7 @@ h1{
 	margin-bottom: 5px;
 	margin-top: 0px;
 	text-align: left;
+	color:#222;
 	}
 
 .secret{
