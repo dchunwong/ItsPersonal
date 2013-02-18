@@ -143,6 +143,7 @@ nav ul{
 	color: #99D8DE;
 	text-decoration: none;
 	font-size: .75em;
+	-webkit-transition: color .1s linear;
 }
 nav ul li ul:hover .contact{
 	color:#A2E4EB;
