@@ -1,6 +1,6 @@
 
 body{
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	background-image: url(tile.png);
 	background-repeat: repeat;
 	background-attachment: fixed;
@@ -100,7 +100,7 @@ nav ul li:hover > ul{
 	outline-style: solid;
 	outline-color:#E8E8E8;
 	outline-width: 1px;
-	transition-delay:0s;
+	-webkit-transition-delay: 0s;
 	-webkit-transition: -webkit-box-shadow .1s ease-in;
 	-moz-transition: -moz-box-shadow .1s ease-in;
 	-o-transition: -moz-box-shadow .1s ease-in;
