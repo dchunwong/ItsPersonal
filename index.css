@@ -156,3 +156,8 @@ nav ul li ul:hover .contact{
 	text-decoration: none;
 	color: #88c0c5;
 }
+.picture{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width: 35em
+}
