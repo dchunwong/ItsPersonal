@@ -125,7 +125,7 @@ nav ul{
 	margin:0px;
 	padding: 0em;
 }
-#project{
+.project{
 	text-decoration: none;
 	font-family: 'Bitter', sans-serif;
 	color: #444;
@@ -162,4 +162,9 @@ nav ul li ul:hover .contact{
 	margin-top: 5px;
 	margin-bottom: 5px;
 	width: 35em
+}
+
+#projlink{
+	text-decoration:underline;
+	color: #88c0c5;
 }
