@@ -108,6 +108,7 @@
   var closest; //index of closest NPC.
   var headings = ['west', 'east', 'north', 'south']; //Possible directions
   var currentPost; //Current Post that is in use.
+  var pos; //position of player
 
   function square(x){return Math.pow(x, 2);};
   function animate(object){
@@ -159,7 +160,7 @@
     if(event.keyCode != 123){
       event.preventDefault();
     }
-    var pos = $(player).position();
+    pos = $(player).position();
     var keyPress = event.keyCode
     //Player is deciding whether to like post
     if (box != undefined && box.innerHTML == 'Like post? Y/N.'){ 
@@ -272,8 +273,8 @@
         writeBox();
       }
     }
-    player.zIndex = $(player).position().top;
-
+    player.zIndex = pos.top;
+    console.log("hello");
   });
   //Generates a text box with first post in posts array
   function writeBox(){
