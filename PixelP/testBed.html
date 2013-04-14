@@ -313,6 +313,10 @@
   //Generates a text box with first post in posts array
   function writeBox(){
     var curr = posts.shift();
+    if (curr == undefined){
+      lazyLoad();
+      curr = posts.shift();
+    }
     while (curr.message == undefined){
       curr = posts.shift();
       lazyLoad();
