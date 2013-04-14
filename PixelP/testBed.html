@@ -272,7 +272,8 @@
         writeBox();
       }
     }
-    player.zIndex = player.position().top;
+    player.zIndex = $(player).position().top;
+
   });
   //Generates a text box with first post in posts array
   function writeBox(){
