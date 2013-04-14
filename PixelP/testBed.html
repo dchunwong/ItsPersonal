@@ -1,5 +1,6 @@
 <META HTTP-EQUIV="EXPIRES" CONTENT= 0>
 <title> PixelPeople </title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <link rel="icon" 
       type="image/ico" 
       href="assets/flame.ico">
@@ -94,10 +95,9 @@
   <img id = "player" face = "north" src = 'assets/Player0000.png'></img>
   <a href="http://dchunwong.com/projects" style ="text-decoration: none; color: #444">Back</a>
 <audio id="auto" style = "display: none" controls autoplay loop= "loop"
- autoplay = "autoplay"> <source id="source" src="assets/bgm.mp3" type="audio/mpeg"></audio>
+ autoplay = "autoplay"> <source id="source" src="assets/bgm2.mp3" type="audio/mpeg"></audio>
 </body>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 <script>
 
@@ -153,7 +153,26 @@
       animate(NPCs[i]);
     }
   }, 500);
+  $(document.body).click(function(e){
+    player.style.top = e.pageY - 32;
+    player.style.left = e.pageX;
+  })
 
+  $('.NPC').click(function(e){
+    console.log(e);
+    var nPos = $(this).position();
+    var dist = Math.sqrt(square(nPos.left-pos.left)+square((nPos.top*1.32)
+                   -(pos.top*1.32)));
+    if(dist <= 100){
+      for (var i = 0; i < 0; i++) {
+        if (NPCs[i] == this){
+          closest = i;
+          break;
+        }
+      };
+    }
+    writeBox();
+  })
   //Key press handler
   $(document.body).keydown(function(event){
     var interval = 10
