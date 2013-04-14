@@ -67,7 +67,11 @@
           FB.login(function(response){}, {scope:"read_stream, publish_actions"});
         }
       })
-      //after a successful load and login title will fade in.
+      //after a successful load of api posts will load and login title will fade in.
+      FB.api('me/home?fields=message', function(response){
+      posts = response.data;
+      next = response.paging.next;
+      })
       title = document.createElement('img'); 
       title.setAttribute('src', 'assets/Title.png');
       title.id = "title";
@@ -102,6 +106,7 @@
   var closest; //index of closest NPC.
   var headings = ['west', 'east', 'north', 'south']; //Possible directions
   var posts = []; //List of loaded Facebook posts
+  var next; //next page of posts;
   var currentPost; //Current Post that is in use.
 
   function square(x){return Math.pow(x, 2);};
@@ -199,14 +204,13 @@
       //Is it the beginning of the game?
       if (title != undefined){
         $(title).fadeOut("slow");
-        populate();
         title = undefined;
         writeInstruct();
         return;
       }
       if (box != undefined){
         //Are instructions displayed?
-        if(box.innerHTML == "Arrow Keys: Move|Space: Interact|Disclaimer: I am not responsible for any unwarranted likes."){
+        if(box.innerHTML == "Arrow Keys: Move|Space: Interact|Disclaimer: I am not responsible for any unwarranted likes"){
           box.remove();
           box = undefined;
           setTimeout(function(){populate();}, 3000);
@@ -256,9 +260,9 @@
         var name;
         closestDist = 1000000; //Reset closest distance counted
         if (posts.length == 0){ //If no more posts, load more.
-          FB.api('me/home?until=now&fields=message', function(response){
-            console.log(response);
+          FB.api(next+'?fields=message', function(response){
             posts = response.data;
+            next = response.paging.next;
             writeBox();
           });
         }
