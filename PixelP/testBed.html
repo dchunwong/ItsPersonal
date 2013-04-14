@@ -255,6 +255,7 @@
         }
       }
       if(closest != undefined){
+        lazyLoad();
         box = document.createElement('div');
         box.id = 'textBox';
         box.style.width = window.innerWidth-30;
@@ -269,19 +270,9 @@
     var curr = posts.shift();
     while (curr.message == undefined){
       curr = posts.shift();
-      if (posts.length == 0){ //If no more posts, load more.
-        FB.api(next+'&fields=message', function(response){
-          posts = response.data;
-          next = response.paging.next;
-        });
-      }
+      lazyLoad();
     }
-    if (posts.length == 0){ //If no more posts, load more.
-      FB.api(next+'&fields=message', function(response){
-        posts = response.data;
-        next = response.paging.next;
-      });
-    }
+    lazyLoad();
     currentPost = curr.id;
     box.innerHTML = curr.message;
     document.getElementById('container').appendChild(box);
@@ -291,9 +282,9 @@
   function removeBox(){
     box.remove();
     box = undefined;
-    $(NPCs[closest]).fadeTo('fast', 0, function(){NPCs[closest].remove()});
+    $(NPCs[closest]).fadeTo('fast', 0, function(){NPCs[closest].remove();    
+                                                  closest = undefined;});
     makePerson();
-    closest = undefined;
     currentPost = undefined;
     return;
   }
@@ -336,5 +327,13 @@
             }, 500)
         }, 500)
       }, 0);
+  }
+  function lazyLoad(){
+    if (posts.length == 0){ //If no more posts, load more.
+      FB.api(next+'&fields=message', function(response){
+        posts = response.data;
+        next = response.paging.next;
+      });
+    }
   }
 </script>
