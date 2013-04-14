@@ -102,7 +102,8 @@
 <script>
 
   var player = document.getElementById('player'); //Controlled character
-  var idlep = setInterval(function() {animate(player)}, 500); //interval for player animation
+  var idlep = setInterval(function() {animate(player);
+                          player.zIndex = pos.top;}, 500); //interval for player animation
   var NPCs = document.getElementsByClassName('NPC'); //Live list of NPCs
   var box; //Text box variable.
   var closest; //index of closest NPC.
@@ -273,8 +274,6 @@
         writeBox();
       }
     }
-    player.zIndex = pos.top;
-    console.log("hello");
   });
   //Generates a text box with first post in posts array
   function writeBox(){
