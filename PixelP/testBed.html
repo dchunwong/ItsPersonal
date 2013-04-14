@@ -199,7 +199,15 @@
       return;
     }
     else if(keyPress == 192){
-      document.getElementById('source').setAttribute("src", 'assets/bgm2.mp3');
+      if (document.getElementById('source').getAttribute("src") == 'assets/bgm.mp3'){
+        document.getElementById('source').setAttribute("src", 'assets/bgm2.mp3');
+      }
+      else {
+        document.getElementById('source').setAttribute("src", 'assets/bgm.mp3');
+      }
+      var audio = document.getElementById('auto');
+      audio.load();
+      audio.play();
     }
     //Display Controls on / press.
     else if(keyPress == 191 && box == undefined){
