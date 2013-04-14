@@ -54,6 +54,8 @@
 
   <script>
     var title;
+    var posts = []; //List of loaded Facebook posts
+    var next; //next page of posts;
     window.fbAsyncInit = function() {
       // init the FB JS SDK
       FB.init({
@@ -69,8 +71,8 @@
       })
       //after a successful load of api posts will load and login title will fade in.
       FB.api('me/home?fields=message', function(response){
-      posts = response.data;
-      next = response.paging.next;
+        posts = response.data;
+        next = response.paging.next;
       })
       title = document.createElement('img'); 
       title.setAttribute('src', 'assets/Title.png');
@@ -105,8 +107,6 @@
   var box; //Text box variable.
   var closest; //index of closest NPC.
   var headings = ['west', 'east', 'north', 'south']; //Possible directions
-  var posts = []; //List of loaded Facebook posts
-  var next; //next page of posts;
   var currentPost; //Current Post that is in use.
 
   function square(x){return Math.pow(x, 2);};
