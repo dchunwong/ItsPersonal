@@ -93,7 +93,7 @@
 
   <img id = "player" face = "north" src = 'assets/Player0000.png'></img>
   <a href="http://dchunwong.com/projects" style ="text-decoration: none; color: #444">Back</a>
-<audio style = "display: none" controls autoplay loop= "loop"
+<audio id="auto" style = "display: none" controls autoplay loop= "loop"
  autoplay = "autoplay"> <source src="assets/bgm.mp3" type="audio/mpeg"></audio>
 </body>
 
@@ -179,7 +179,10 @@
       }
       return;
     }
-
+    //Display Controls on / press.
+    else if(keyPress == 191 && box == undefined){
+      writeInstruct();
+    }
     //Player presses right
     else if(keyPress == 39){
       player.setAttribute("face", "east"); 
@@ -215,7 +218,7 @@
       }
       if (box != undefined){
         //Are instructions displayed?
-        if(box.innerHTML == "Arrow Keys: Move|Space: Interact|Disclaimer: I am not responsible for any unwarranted likes"){
+        if(box.innerHTML == "Arrow Keys: Move | Space: Interact | Disclaimer: I am not responsible for any unwarranted likes | Press '/' to view these again"){
           FB.api('me/home?fields=message', function(response){
             console.log(response);
             posts = response.data;
@@ -223,7 +226,9 @@
           })
           box.remove();
           box = undefined;
-          setTimeout(function(){populate();}, 3000);
+          if(NPCs.length == 0){
+            setTimeout(function(){populate();}, 3000);
+          }
           return;
         }
         //Player agrees to like post
