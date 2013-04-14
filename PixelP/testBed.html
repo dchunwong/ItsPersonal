@@ -203,7 +203,6 @@
       animate(player);
       player.style.top = pos.top - interval;
     }
-    player.zIndex = player.position().top;
     //Player presses space bar
     else if(keyPress == 32){
       //Is it the beginning of the game?
@@ -273,6 +272,7 @@
         writeBox();
       }
     }
+    player.zIndex = player.position().top;
   });
   //Generates a text box with first post in posts array
   function writeBox(){
