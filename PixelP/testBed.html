@@ -70,11 +70,6 @@
         }
       })
       //after a successful load of api posts will load and login title will fade in.
-      FB.api('me/home?fields=message', function(response){
-        console.log(response);
-        posts = response.data;
-        next = response.paging.next;
-      })
       title = document.createElement('img'); 
       title.setAttribute('src', 'assets/Title.png');
       title.id = "title";
@@ -212,6 +207,11 @@
       if (box != undefined){
         //Are instructions displayed?
         if(box.innerHTML == "Arrow Keys: Move|Space: Interact|Disclaimer: I am not responsible for any unwarranted likes"){
+          FB.api('me/home?fields=message', function(response){
+            console.log(response);
+            posts = response.data;
+            next = response.paging.next;
+          })
           box.remove();
           box = undefined;
           setTimeout(function(){populate();}, 3000);
