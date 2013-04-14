@@ -260,16 +260,7 @@
         box.style.width = window.innerWidth-30;
         var name;
         closestDist = 1000000; //Reset closest distance counted
-        if (posts.length == 0){ //If no more posts, load more.
-          FB.api(next+'?fields=message', function(response){
-            posts = response.data;
-            next = response.paging.next;
-            writeBox();
-          });
-        }
-        else{
-          writeBox();
-        }
+        writeBox();
       }
     }
   });
@@ -278,6 +269,18 @@
     var curr = posts.shift();
     while (curr.message == undefined){
       curr = posts.shift();
+      if (posts.length == 0){ //If no more posts, load more.
+        FB.api(next+'&fields=message', function(response){
+          posts = response.data;
+          next = response.paging.next;
+        });
+      }
+    }
+    if (posts.length == 0){ //If no more posts, load more.
+      FB.api(next+'&fields=message', function(response){
+        posts = response.data;
+        next = response.paging.next;
+      });
     }
     currentPost = curr.id;
     box.innerHTML = curr.message;
