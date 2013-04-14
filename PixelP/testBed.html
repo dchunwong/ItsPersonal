@@ -1,5 +1,8 @@
 <META HTTP-EQUIV="EXPIRES" CONTENT= 0>
 <title> PixelPeople </title>
+<link rel="icon" 
+      type="image/ico" 
+      href="assets/flame.ico">
 <link href='http://fonts.googleapis.com/css?family=VT323' rel='stylesheet'
   type='text/css'>
 <style>
@@ -89,6 +92,7 @@
   </script>
 
   <img id = "player" face = "north" src = 'assets/Player0000.png'></img>
+  <a href="http://dchunwong.com/projects" style ="text-decoration: none; color: #444">Back</a>
 <audio style = "display: none" controls autoplay loop= "loop"
  autoplay = "autoplay"> <source src="assets/bgm.mp3" type="audio/mpeg"></audio>
 </body>
@@ -139,6 +143,7 @@
       } else {object.setAttribute("src", 'assets/PlayerSide0000.png');}
     }
   }
+
   //animates each .NPC by iterating through a live list.
   var idleN = setInterval(function() {
     for (var i = 0; i < NPCs.length; i++) {
@@ -147,6 +152,8 @@
       animate(NPCs[i]);
     }
   }, 500);
+
+  //Key press handler
   $(document.body).keydown(function(event){
     var interval = 10
     if(event.keyCode != 123){
@@ -156,7 +163,7 @@
     var keyPress = event.keyCode
     //Player is deciding whether to like post
     if (box != undefined && box.innerHTML == 'Like post? Y/N.'){ 
-      if (keyPress == 89){
+      if (keyPress == 89){ //Y
         FB.api("/"+currentPost+"/likes", 'post', function(response){
           console.log(response);
           if(response == true){
@@ -166,11 +173,12 @@
         })
         return;
       }
-      else if (keyPress == 78){
+      else if (keyPress == 78){ //N
         removeBox();
       }
       return;
     }
+
     //Player presses right
     else if(keyPress == 39){
       player.setAttribute("face", "east"); 
@@ -195,6 +203,7 @@
       animate(player);
       player.style.top = pos.top - interval;
     }
+    player.zIndex = player.position().top;
     //Player presses space bar
     else if(keyPress == 32){
       //Is it the beginning of the game?
