@@ -71,6 +71,7 @@
       })
       //after a successful load of api posts will load and login title will fade in.
       FB.api('me/home?fields=message', function(response){
+        console.log(response);
         posts = response.data;
         next = response.paging.next;
       })
