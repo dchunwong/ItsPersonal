@@ -1,0 +1,74 @@
+SORTING LIKE A BITCH
+
+Insertion sort
+O(n^2) time.
+invariant: S is sorted.
+
+Start with empty list S & unsorted I of n items. for (e ach item x in I) {
+  insert x into S in sorted order.
+  }
+}
+
+  If S is linked list, theta(n) worst=case time to find right position.
+
+  If S is array, theta(n) wrost cae time
+
+  Both ways theta(n^2) worst case time overall.
+
+  If s is array, insertion sort is an in place sort.
+
+  If s is  abalanced search tree
+
+
+Selection sort
+
+Also quadratic time.
+
+Invariant: S is sorted.
+
+Invariant: s is sorted
+
+Start with empty list s and unsorted list I of n items,
+for ( i=o; i< n ; i ++ ){
+  x <- item in I with smallest key.
+  Remove x from I.
+  Append x to end of S.
+}
+
+Wheter S is array or linked list, theta(n^2) time, even in best case.
+
+heapsort
+
+Selection sort wherein I the unsorted list is replaced with a binary heap.
+ Toss all items in I onto heap h (ignoring heap-order property). 
+ h.bottomUpHeap();
+ for(i=0; i<n; i ++){
+ x= h.removeMin();
+ Append x to end of S.
+ }
+
+ Heapsort runs in 0(n log n) time.
+ In place: maintain heap backward at the end of the array
+
+ Merge sort
+
+ Merge 2 sorted lists in to one sorted list in linear time.
+
+ Let q1 and q2 be two sorted queues. and let Q be an empty q while ( neither q1 nor q2 is epty) {
+
+  item1= q1.front();
+  item2= q2.front();
+  move the smaller of item1 & item 2 from present queue to the end of Q.
+
+ }
+concatenate remaining non-empty queue(q1 or q3) to end of Q.
+
+Merge sort is a recursive divide-and-conquer algorithm,
+
+start with unsorted list I of n items.
+Break I into halves I1 & i2, having [n/2] and [n/2] items.
+
+sort I1 recursively 
+  I can feel my typing speed deteriorate as I continue to type without a mechanical keybaord and this chiclet keyboard is only slowing me down man
+  becuause it is all about the mechs since the mechansm is so much better than shitty laptop keyboards am I rigght I just lvoe
+  How long the travel is on the key and how it comes up with you
