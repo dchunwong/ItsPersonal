@@ -206,8 +206,7 @@
       }
       if (box != undefined){
         //Are instructions displayed?
-        if(box.innerHTML == "Arrow Keys: Move</br>Space: Interact/Advance</br>
-           Disclaimer: I am not responsible for any unwarranted likes."){
+        if(box.innerHTML == "Arrow Keys: Move|Space: Interact|Disclaimer: I am not responsible for any unwarranted likes."){
           box.remove();
           box = undefined;
           setTimeout(function(){populate();}, 3000);
@@ -295,16 +294,17 @@
     box = document.createElement('div');
     box.id = 'textBox';
     box.style.width = window.innerWidth-30;
-    box.innerHTML = "Arrow Keys: Move</br>Space: Interact/Advance</br>
-           Disclaimer: I am not responsible for any unwarranted likes.";
+    box.innerHTML = "Arrow Keys: Move|Space: Interact|Disclaimer: I am not responsible for any unwarranted likes";
     document.getElementById('container').appendChild(box);
   }
   //Randomly place an NPC facing any direction;
   function makePerson(){
     var person = document.createElement('img');
     person.setAttribute("class", "NPC");  
-    person.style.left = Math.round((Math.random()*(window.innerWidth-51))/51)*51;
-    person.style.top = Math.round((Math.random()*(window.innerHeight-51))/51)*51;
+    person.style.left = Math.round((Math.random()*(window.innerWidth-51)
+                                    )/51)*51;
+    person.style.top = Math.round((Math.random()*(window.innerHeight-51)
+                                    )/51)*51;
     person.setAttribute("face", headings[Math.floor((Math.random()*4))]);
     document.getElementById("container").appendChild(person);
     $(person).fadeIn("slow");  
