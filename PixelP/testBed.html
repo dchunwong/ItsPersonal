@@ -240,7 +240,6 @@
         }
         else{
           writeBox();
-          closest = undefined;
         }
       }
     }
@@ -253,6 +252,8 @@
     currentPost = curr.id;
     box.innerHTML = curr.message;
     document.getElementById('container').appendChild(box);
+    closest = undefined;
+    closestDist = 1000000;
     return;
   }
   function removeBox(){
