@@ -94,7 +94,7 @@
   <img id = "player" face = "north" src = 'assets/Player0000.png'></img>
   <a href="http://dchunwong.com/projects" style ="text-decoration: none; color: #444">Back</a>
 <audio id="auto" style = "display: none" controls autoplay loop= "loop"
- autoplay = "autoplay"> <source src="assets/bgm.mp3" type="audio/mpeg"></audio>
+ autoplay = "autoplay"> <source id="source" src="assets/bgm.mp3" type="audio/mpeg"></audio>
 </body>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -178,6 +178,9 @@
         removeBox();
       }
       return;
+    }
+    else if(keyPress == 192){
+      document.getElementById('source').setAttribute("src", 'assets/bgm2.mp3');
     }
     //Display Controls on / press.
     else if(keyPress == 191 && box == undefined){
