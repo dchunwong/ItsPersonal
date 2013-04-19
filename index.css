@@ -162,8 +162,7 @@ nav ul li ul:hover .contact{
 .picture{
 	margin-top: 5px;
 	margin-bottom: 5px;
-	width: auto;
-	max-width: 35em;
+	max-width: 100%;
 }
 
 #projlink{
