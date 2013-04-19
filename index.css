@@ -39,13 +39,14 @@ h2{
 
 
 .cont{
-	position: relative;                                                                                              
-	width: 35em;
-	left:50%;
-	margin-left:-17.5em;
+	position: relative;
+	width: auto;
+	max-width: 35em;
 	vertical-align: middle;
 	padding:10px;
 	margin-bottom: 15px;
+	margin-right: auto;
+	margin-left: auto;
 	background-color: white;
 	-moz-box-shadow: 10px 10px 0px 0px #999;
 	-webkit-box-shadow: 10px 10px 0px 0px #999;
@@ -63,7 +64,7 @@ h2{
 	-webkit-transition: -webkit-box-shadow .1s ease-in, color .1s ease-in;
 	-moz-transition: -moz-box-shadow .1s ease-in, color .1s ease-in;
 	-o-transition: -moz-box-shadow .1s ease-in, color .1s ease-in;
-	transition: box-shadow .1s ease-in, color .1s ease-in;	
+	transition: box-shadow .1s ease-in, color .1s ease-in;
 }
 .cats:hover {
 	color: #99D8DE;
@@ -161,7 +162,8 @@ nav ul li ul:hover .contact{
 .picture{
 	margin-top: 5px;
 	margin-bottom: 5px;
-	width: 35em
+	width: auto;
+	max-width: 35em;
 }
 
 #projlink{
