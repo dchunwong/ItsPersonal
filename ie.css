@@ -12,6 +12,23 @@ body{
 	padding-left: .2em;
 }
 
+.cont{
+	position: relative;
+	width: auto;
+	max-width: 35em;
+	vertical-align: middle;
+	padding:10px;
+	margin-bottom: 15px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: white;
+	-moz-box-shadow: 10px 10px 0px 0px #999;
+	-webkit-box-shadow: 10px 10px 0px 0px #999;
+	-o-box-shadow: 10px 10px 0px 0px #999;
+	box-shadow: 10px 10px 0px 0px #999;
+	-webkit-transition: height 1s ease-out;
+}
+
 h1{
 	font-family:'Bitter', sans-serif;
 	font-size: 87px;
@@ -39,7 +56,7 @@ h2{
 
 
 .cont{
-	position: relative;                                                                                              
+	position: relative;
 	width: 600px;
 	left:50%;
 	margin-left:-300px;
@@ -63,7 +80,7 @@ h2{
 	-webkit-transition: -webkit-box-shadow .1s ease-in, color .1s ease-in;
 	-moz-transition: -moz-box-shadow .1s ease-in, color .1s ease-in;
 	-o-transition: -moz-box-shadow .1s ease-in, color .1s ease-in;
-	transition: box-shadow .1s ease-in, color .1s ease-in;	
+	transition: box-shadow .1s ease-in, color .1s ease-in;
 }
 .cats:hover {
 	color: #99D8DE;
