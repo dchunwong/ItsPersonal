@@ -54,8 +54,8 @@
 		var crazy = 0;
 		var drawcolor = "000000";
 		document.onkeydown = function(e){if (e.keyCode == 67 && !crazy){crazy = 1}else{crazy = 0}};
-		canvas.height=window.height;
-		canvas.width=window.width;
+		canvas.height=document.height;
+		canvas.width=document.width;
 
 		clearbut.onclick= clear;
 		drawbut.onclick = toggle;
