@@ -41,8 +41,7 @@ h2{
 .cont{
 	position: relative;
 	width: auto;
-	max-width: 35em;
-	vertical-align: middle;
+	max-width: 36em;
 	padding:10px;
 	margin-bottom: 15px;
 	margin-right: auto;
@@ -52,7 +51,6 @@ h2{
 	-webkit-box-shadow: 10px 10px 0px 0px #999;
 	-o-box-shadow: 10px 10px 0px 0px #999;
 	box-shadow: 10px 10px 0px 0px #999;
-	-webkit-transition: height 1s ease-out;
 }
 
 .cats{
