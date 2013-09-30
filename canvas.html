@@ -116,6 +116,7 @@
 				ctx.beginPath();
 				ctx.rect(e.x, e.y, 5, 5);
 				ctx.fill();
+				ctx.beginPath();
 				ctx.moveTo(orig[0], orig[1]);
 				ctx.bezierCurveTo(t1[0], t1[1], e.x, e.y, dest[0], dest[1]);
 				ctx.stroke();
