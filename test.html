@@ -75,7 +75,7 @@
     var color=colors[Math.floor((Math.random()*5))];
     var x=Math.round((Math.random()*(window.innerWidth))/25)*25;
     var y=Math.round((Math.random()*(window.innerHeight))/25)*25;
-    insert.style.cssText="left:"+x+"; top:"+y+"; background:"+color;
+    insert.style.cssText="left:"+x+"; top:"+y+"; background-color:"+color;
     insert.className='square';
     a.appendChild(insert);
     $(insert).fadeTo('fast', 1);
