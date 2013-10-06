@@ -36,6 +36,7 @@
 				<li id="color">Color</li>
 				<li id="clear">Clear</li>
 				<li id="draw"><b>Draw</b>/Curves</li>
+				<li id="size">Size</li>
 			</ol>
 		</div>
 	</body>
@@ -49,6 +50,7 @@
 		var drawbut = document.getElementById("draw");
 		var colorbut = document.getElementById("color");
 		var setlist = document.getElementById("setlist");
+		var sizebut = document.getElementById("size");
 		var orig;
 		var dest;
 		var crazy = 0;
@@ -56,10 +58,11 @@
 		document.onkeydown = function(e){if (e.keyCode == 67 && !crazy){crazy = 1}else{crazy = 0}};
 		canvas.height=document.height;
 		canvas.width=document.width;
-
 		clearbut.onclick= clear;
 		drawbut.onclick = toggle;
 		colorbut.onclick = colorForm;
+		size.onclick = changeSize;
+		ctx.lineCap= "round";
 		/* NOTE: in this version where -> draw and draw -> drawToggle.
 		 *
 		 * Either comment out the first two or the last two of these
@@ -159,7 +162,6 @@
 				if (crazy){
 					crazydraw(e);
 				}
-				// keep this though
 				drawing = 0;
 			}
 		}
@@ -178,6 +180,7 @@
 				canvas.onmousedown = drawToggle;
 				canvas.onmouseup = drawToggle;
 				ctx.strokeStyle="#"+drawcolor;
+				setting = 0;
 				drawbut.innerHTML = "<b>Draw</b>/Curves";
 			}
 		}
@@ -200,6 +203,23 @@
 					colorbut.style.color="#"+color;
 				}
 				setlist.removeChild(document.getElementById("form"));
+			}
+		}
+		function changeSize(){
+			if(document.getElementById("sizef") == null) {
+				var form1 = document.createElement("li");
+				form1.id = "form1";
+				form1.innerHTML= "<input id='sizef' type='text' size='25' placeholder='Brush Size'></input>";
+				setlist.appendChild(form1);
+			}
+			else {
+				var size = parseInt(document.getElementById("sizef").value, 10);
+				if(isNaN(size) || size > 200){
+					window.alert("Too big or not a valid number!");
+				} else {
+					ctx.lineWidth = Math.abs(size);
+				}
+				setlist.removeChild(document.getElementById("form1"));
 			}
 		}
 		function crazydraw(e){ //turn on crazy drawing
