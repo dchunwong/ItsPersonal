@@ -1,0 +1,102 @@
+<head>
+    <link href="index.css" type="text/css" rel="stylesheet" />
+    <title>Press Enter!</title>
+</head> 
+<style>
+	.card{
+		width:300;
+		height:400;
+        background-image: url('./card.png');
+		padding: 0px;
+		border-color: #F5E947;
+		transition: 250ms;
+        position: relative;
+        left: 0;
+
+	}
+	.cardcont{
+		width:300;
+		height:400;
+        margin: 5px;
+        float: left;
+	}
+    #cont{
+        max-width: 1240px;
+        overflow:hidden;
+    }
+</style>
+<body>
+    <div id = "cont">
+    </div>
+</body>
+<script type="text/javascript">
+    var cards, cardContainers, cardWidth, cardHeight, front, back
+    cardWidth = 300;
+    cardHeight = 400;
+    back = "url('./card.png')";
+    front = "url('./side.png')";
+    document.onkeydown = function(e){
+        if (e.keyCode == 13){
+            populate(1);
+        }
+    }
+    function update(){
+        cards =  Array.prototype.slice.call(document.getElementsByClassName("card"));
+        cardContainers =  Array.prototype.slice.call(document.getElementsByClassName("cardcont"));
+        for(var i = 0; i<cards.length; ++i){
+            console.log(cards[i]);
+            if(cards[i].getAttribute("flip") != null){
+                continue;
+            }
+            cards[i].style.left = 0;
+            cards[i].setAttribute("flip", 0);  
+            cardContainers[i].onclick = function(){
+                var cont = this;
+                cards[cardContainers.indexOf(cont)].style.width=0;
+                flip(cards[cardContainers.indexOf(cont)]);
+                setTimeout(function(){
+                    if(cards[cardContainers.indexOf(cont)].style.backgroundColor == "transparent" ||
+                       cards[cardContainers.indexOf(cont)].style.backgroundColor == "rgba(0, 0, 0, 0)"){
+                        cards[cardContainers.indexOf(cont)].style.backgroundImage= back;
+                        cards[cardContainers.indexOf(cont)].style.backgroundColor = "rgba(1,1,1,1)";
+                        }
+                    else{
+                        cards[cardContainers.indexOf(cont)].style.backgroundImage = front;
+                        cards[cardContainers.indexOf(cont)].style.backgroundColor = "rgba(0, 0, 0, 0)";
+                    }
+                    flip(cards[cardContainers.indexOf(cont)]);
+                    cards[cardContainers.indexOf(cont)].style.width = cardWidth;
+                }, 500);
+            }
+        }
+    }
+    function populate(x){
+        if (typeof(x) == "undefined"){
+            x = 20;
+        }
+        for(x; x>0; --x){
+                var newCardCont = document.createElement('div');
+                var newCard = document.createElement('div');
+                newCardCont.className = "cardcont";
+                newCard.className = "card";
+                newCardCont.appendChild(newCard);
+                newCard.style.opacity = 0;
+                document.getElementById("cont").appendChild(newCardCont);
+                (function(newCard){
+                     setTimeout(function(){newCard.style.opacity = 1;}, 5);
+                })(newCard);
+        }
+        update();
+    }
+    function flip(item){
+        if(item.getAttribute("flip") != 0){
+            item.style.left = parseInt(item.style.left)-150;
+            item.setAttribute("flip", 0);
+        }
+        else{
+            item.style.left = parseInt(item.style.left)+150;
+            item.setAttribute("flip", 1);        
+        }
+    }
+    update();
+</script> 
