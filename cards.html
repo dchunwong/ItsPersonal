@@ -133,7 +133,8 @@
     }
     function generateColorMaps(i){
         if(i % 2 != 0){
-            console.log("must be even")
+            console.log("must be even");
+            return;
         }
         var count ={}; 
         var x = i-1;
@@ -164,8 +165,11 @@
     }
     function startGame(x){
         if(x % 2 != 0){
-            console.log("must be even")
+            console.log("must be even");
+            return;
         }
+        colors = [];
+        cardColors = {};
         populate(x);
         generateColorMaps(x);
     }
