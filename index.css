@@ -37,15 +37,15 @@ h2{
 	margin-bottom: 5px;
 }
 
-
 #cont{
 	position: relative;
 	width: auto;
-	max-width: 36em;
+	max-width: 44em;
 	padding:10px;
 	margin-bottom: 15px;
 	margin-right: auto;
 	margin-left: auto;
+	height:auto;
 	background-color: white;
 	-moz-box-shadow: 10px 10px 0px 0px #999;
 	-webkit-box-shadow: 10px 10px 0px 0px #999;
@@ -53,6 +53,12 @@ h2{
 	box-shadow: 10px 10px 0px 0px #999;
 }
 
+#sidebar{
+	padding:5px;
+	float:right;
+	height:auto;
+	width: auto;
+}
 .cats{
 	text-decoration: none;
 	color: #88c0c5;
@@ -124,7 +130,7 @@ nav ul{
 	margin:0px;
 	padding: 0em;
 }
-.project{
+.project .projlink{
 	text-decoration: none;
 	font-family: 'Bitter', sans-serif;
 	color: #444;
@@ -132,6 +138,16 @@ nav ul{
 
 .projects{
 	text-align: center;
+}
+.picture{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	max-width: 100%;
+}
+
+.projlink{
+	text-decoration:underline;
+	color: #88c0c5;
 }
 .tilde{
 	line-height: 50%;
@@ -157,13 +173,6 @@ nav ul li ul:hover .contact{
 	text-decoration: none;
 	color: #88c0c5;
 }
-.picture{
-	margin-top: 5px;
-	margin-bottom: 5px;
-	max-width: 100%;
-}
-
-#projlink{
-	text-decoration:underline;
-	color: #88c0c5;
+a{
+	border: 0;
 }
