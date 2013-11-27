@@ -50,6 +50,9 @@
     left: -200px;
     z-index: 10000000000;
   }
+  a{
+    style: none;
+  }
 </style>
 
 <body id="container">
@@ -252,6 +255,8 @@
             box.innerHTML = "Please login to Facebook First.";
           }
         } else{
+          box.remove()
+          login.remove()
           $(title).fadeOut("slow");
           title = undefined;
           writeInstruct();
