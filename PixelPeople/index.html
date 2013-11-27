@@ -57,7 +57,7 @@
 <div id="fb-root"></div>
 
   <script>
-    var title;
+    var title, response, login;
     var posts = []; //List of loaded Facebook posts
     var next; //next page of posts;
     window.fbAsyncInit = function() {
@@ -68,8 +68,8 @@
         xfbml      : true                                  // Look for social plugins on the page
       });
       console.log('api loaded!');
-      console.log(FB.getLoginStatus(function(response){return response}));
       FB.getLoginStatus(function(response) {
+        response = this.response;
         if(response.status != 'connected'){
           FB.login(function(response){}, {scope:"read_stream, publish_actions"});
         }
