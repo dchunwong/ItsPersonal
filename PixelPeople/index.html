@@ -62,10 +62,11 @@
     var next; //next page of posts;
     function check(){
         FB.getLoginStatus(function(response) {
-        res=response;
-        if(response.status != 'connected'){
-          return false;
-        }};
+          res=response;
+          if(response.status != 'connected'){
+            return false;
+          }
+        };
     };
     window.fbAsyncInit = function() {
       // init the FB JS SDK
