@@ -68,7 +68,7 @@
         xfbml      : true                                  // Look for social plugins on the page
       });
       console.log('api loaded!');
-      console.log(FB.getLoginStatus(function(response){return response};));
+      console.log(FB.getLoginStatus(function(response){return response}));
       FB.getLoginStatus(function(response) {
         if(response.status != 'connected'){
           FB.login(function(response){}, {scope:"read_stream, publish_actions"});
