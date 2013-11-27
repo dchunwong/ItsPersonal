@@ -255,8 +255,14 @@
             box.innerHTML = "Please login to Facebook First.";
           }
         } else{
-          box.remove()
-          login.remove()
+          if(box){
+            box.remove()
+            box = undefined;
+          }
+          if(login){
+            login.remove();
+            login = undefined;
+          }
           $(title).fadeOut("slow");
           title = undefined;
           writeInstruct();
