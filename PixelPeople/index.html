@@ -87,7 +87,6 @@
         }
       })
       //after a successful load of api posts will load and login title will fade in.
-      while (!check()){
             if(login){
               document.getElementById("container").removeChild("login");
               login = undefined;
@@ -97,7 +96,6 @@
             title.id = "title";
             document.getElementById('container').appendChild(title);
             $(title).fadeIn("slow");
-      }
       // read_stream initialization code such as adding Event Listeners goes here
     };
     // Load the SDK asynchronously
