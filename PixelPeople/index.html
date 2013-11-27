@@ -60,7 +60,14 @@
     var title, res, login;
     var posts = []; //List of loaded Facebook posts
     var next; //next page of posts;
-    function check(){return false};
+    function check(){
+        FB.getLoginStatus(function(response) {
+          res=response;
+          if(response.status != 'connected'){
+            return false;
+          }
+        }
+    }
     window.fbAsyncInit = function() {
       // init the FB JS SDK
       FB.init({
