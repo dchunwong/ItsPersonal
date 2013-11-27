@@ -79,10 +79,6 @@
         }
       })
       //after a successful load of api posts will load and login title will fade in.
-            if(login){
-              document.getElementById("container").removeChild("login");
-              login = undefined;
-            }
             title = document.createElement('img'); 
             title.setAttribute('src', 'assets/Title.png');
             title.id = "title";
@@ -249,9 +245,18 @@
     else if(keyPress == 32){
       //Is it the beginning of the game?
       if (title != undefined){
-        $(title).fadeOut("slow");
-        title = undefined;
-        writeInstruct();
+        FB.getLoginStatus(function(response) {
+        if(response.status != "connected"){
+          if(box){
+            writeInstruct();
+            box.innerHTML = "Please login to Facebook First.";
+          }
+        } else{
+          $(title).fadeOut("slow");
+          title = undefined;
+          writeInstruct();
+        }
+      })
         return;
       }
       if (box != undefined){
