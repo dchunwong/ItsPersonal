@@ -247,7 +247,7 @@
       if (title != undefined){
         FB.getLoginStatus(function(response) {
         if(response.status != "connected"){
-          if(box){
+          if(!box){
             writeInstruct();
             box.innerHTML = "Please login to Facebook First.";
           }
