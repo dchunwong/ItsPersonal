@@ -57,7 +57,7 @@
 <div id="fb-root"></div>
 
   <script>
-    var title, response, login;
+    var title, res, login;
     var posts = []; //List of loaded Facebook posts
     var next; //next page of posts;
     window.fbAsyncInit = function() {
@@ -69,7 +69,7 @@
       });
       console.log('api loaded!');
       FB.getLoginStatus(function(response) {
-        response = this.response;
+        res=response;
         if(response.status != 'connected'){
           FB.login(function(response){}, {scope:"read_stream, publish_actions"});
         }
