@@ -118,24 +118,7 @@
   var pos; //position of player
 
   function square(x){return Math.pow(x, 2);};
-  function animate(object){
-    var heading = object.getAttribute("face");
-    //changes sprite based on direction facing and character type.
-    if (heading == "south" || heading == "north"){
-      object.src = "assets/NPC.gif"
-    }
 
-    if(heading == "west" || heading == "east"){
-      object.src = "assets/NPCSide.gif"
-    }
-  }
-
-  //animates each .NPC by iterating through a live list.
-  for (var i = 0; i < NPCs.length; i++) {
-    NPCs[i].style.zIndex = $(NPCs[i]).position().top -50;
-    player.style.zIndex = $(player).position().top;
-    animate(NPCs[i]);
-  }
   $(document.body).click(function(e){
     player.style.top = e.pageY - 32;
     player.style.left = e.pageX;
@@ -354,6 +337,7 @@
     box.innerHTML = "Arrow Keys: Move | Space: Interact | Disclaimer: I am not responsible for any unwarranted likes | Press '/' to view these again";
     document.getElementById('container').appendChild(box);
   }
+
   //Randomly place an NPC facing any direction;
   function makePerson(){
     var person = document.createElement('img');
@@ -363,6 +347,15 @@
     person.style.top = Math.round((Math.random()*(window.innerHeight-51)
                                     )/51)*51;
     person.setAttribute("face", headings[Math.floor((Math.random()*4))]);
+    var heading = person.getAttribute("face");
+    //changes sprite based on direction facing and character type.
+    if (heading == "south" || heading == "north"){
+      person.src = "assets/NPC.gif"
+    }
+
+    if(heading == "west" || heading == "east"){
+      person.src = "assets/NPCSide.gif"
+    }
     document.getElementById("container").appendChild(person);
     $(person).fadeIn("slow");  
   }
