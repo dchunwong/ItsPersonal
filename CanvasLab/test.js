@@ -82,11 +82,21 @@ document.onkeydown = function(e){
     }
 }
 game = new Game();
-updateInterval = setInterval(function(){game.move("E");game.update()}, 30);
-squares = setInterval(function(){
+
+function animate(){
+    game.move("E");
+    game.update();
+    setTimeout(animate, 30);
+}
+
+function squareGen(){
     s = Math.round(Math.random()*50+1);
     game.addSquare(60*s/50, 60*s/50, -60,undefined, s);
-}, 50);
+    setTimeout(squareGen, 50)
+}
+setTimeout(animate, 30);
+setTimeout(squareGen, 50);
+
 window.onresize = function(){
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
