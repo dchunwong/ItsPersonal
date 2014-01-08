@@ -53,11 +53,15 @@
 		color: #C0C0C0;
 	}
 	.artpic{
-		-webkit-box-shadow: 3px 3px 5px #A0A0A0;
+		box-shadow: 3px 3px 5px #A0A0A0;
 		transition: linear .1s;
 	}
 	.artpic:hover{
 		-webkit-transform: rotate(1deg);
+		-moz-transform: rotate(1deg);
+		-o-transform: rotate(1deg);
+		-ms-transform: rotate(1deg);
+		transform: rotate(1deg);
 	}
 	.date{
 		padding-right: 5px;
@@ -65,14 +69,14 @@
 		float: left;
 		color: #C0C0C0;
 	}
-	.container{
+	.content,  .date{
+		vertical-align: top;
+	}
+	#container{
 		max-width: 40em;
 		margin-left: auto;
 		margin-right: auto;
 		transition: linear .1s;
-	}
-	.content,  .date{
-		vertical-align: top;
 	}
 	
 	#sidepic{
@@ -103,7 +107,7 @@
 		#sidebar{
 			max-width: 100%;
 		}
-		.container{
+		#container{
 			max-width: 100%;
 			width: 100%;
 		}
