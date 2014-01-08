@@ -66,7 +66,7 @@
 		color: #C0C0C0;
 	}
 	.container{
-		max-width: 90%;
+		max-width: 40em;
 		margin-left: auto;
 		margin-right: auto;
 		transition: linear .1s;
@@ -93,17 +93,18 @@
 	@media (max-width: 1030px){
 		#sidebar{
 			position: relative;
-			max-width: 600px;
+			max-width: 40em;
 			margin-bottom: 10px;
 			padding: 0px;
 
 		}
-		@media screen and (orientation: portrait){
-			#sidebar{
-				max-width: 100%;
-			}
-			#container{
-				max-width: 100%;
-			}
+	}
+	@media (max-width: 720px){
+		#sidebar{
+			max-width: 100%;
+		}
+		.container{
+			max-width: 100%;
+			width: 100%;
 		}
 	}
