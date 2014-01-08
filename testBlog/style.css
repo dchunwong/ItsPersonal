@@ -100,10 +100,10 @@
 		}
 		@media handheld{
 			#sidebar{
-				width: 90%;
+				max-width: 90%;
 			}
 			article{
-				width: 90%;
+				max-width: 90%;
 			}
 		}
 	}
