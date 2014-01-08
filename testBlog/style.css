@@ -94,7 +94,7 @@
 		border-width: 1px;
 		border-color: #C0C0C0;
 	}
-	@media (max-width: 1030px){
+	@media (max-width: 1070px){
 		#sidebar{
 			position: relative;
 			max-width: 40em;
