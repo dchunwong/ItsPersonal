@@ -99,7 +99,7 @@
 
 		}
 	}
-	@media (max-width: 720px){
+	@media (min-resolution: 300dpi){
 		#sidebar{
 			max-width: 100%;
 		}
