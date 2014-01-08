@@ -94,7 +94,16 @@
 		#sidebar{
 			position: relative;
 			max-width: 600px;
-			margin-bottom: 20px;
+			margin-bottom: 10px;
 			padding: 0px;
+
+		}
+		@media handheld{
+			#sidebar{
+				width: 90%;
+			}
+			article{
+				width: 90%;
+			}
 		}
 	}
