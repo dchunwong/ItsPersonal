@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic|Crimson+Text|Roboto+Slab:700' rel='stylesheet' type='text/css'>
+		<link href="style.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="sidebar">
+			<center>
+				<img id="sidepic" src="http://i.imgur.com/4uAW0iyb.jpg">
+				<hr>
+				<h2> Home </h2>
+				<hr>
+				<h2> Projects </h2>
+				<hr>
+				<h2> LinkedIn </h2>
+				<hr>
+				<h2> E-mail </h2>
+				<hr> 
+				<h2> Github</h2>
+			</center>
+		</div>
+		<div class="container">
+		{{for article in articles}}
+			<article>
+				<h1> {{title}} </h1>
+				<hr>
+				<div class="content">
+				{{content}}
+				</div>
+				<div class="date">
+					<time>{{dateTime}}</time>
+				</div>
+				<div style="clear: both"></div>
+			</article>
+		</div>
+	</body>
+</html>	
