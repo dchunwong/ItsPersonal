@@ -98,13 +98,12 @@
 			padding: 0px;
 
 		}
-		@media screen{
+		@media screen and (orientation: portrait){
 			#sidebar{
 				max-width: 100%;
 			}
-			article{
+			#container{
 				max-width: 100%;
-				margin: 1px;
 			}
 		}
 	}
