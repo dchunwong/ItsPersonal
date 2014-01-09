@@ -32,7 +32,7 @@
 		font-weight: 400;
 	}
 	p{
-		font-family: "Crimson Text", serif;
+		font-family: "Source Sans Pro", serif;
 		margin-top: 5px;
 		vertical-align: top;
 		font-size: 1.25em;
@@ -88,7 +88,7 @@
 		max-width: 200px;
 		margin-left: auto;
 		margin-right: auto;
-		padding: 5px;
+		padding: 10px;
 		border-style: solid;
 		background-color: white;
 		border-width: 1px;
