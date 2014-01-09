@@ -106,6 +106,9 @@
 	#sideTitle{
 		font-size: 2em;
 	}
+	strong{
+		font-weight: 600;
+	}
 	@media (max-width: 1070px){
 		#sidebar{
 			position: relative;
