@@ -9,7 +9,7 @@
 		
 	}
 	body{
-		background-image: url('stripe2.png');
+		background-image: url('pics/stripe2.png');
 		background-repeat: repeat;
 		background-attachment: fixed;
 	}
@@ -19,13 +19,10 @@
 	}
 	h2{
 		margin-bottom: 5px;
-		color: #707070;
+		color: #606060;
 		font-weight: 400;
 		display:inline;
 		transition: linear .1s;
-	}
-	h2:hover{
-		color: #303030;
 	}
 	h1{
 		font-size: 2.5em;
@@ -37,9 +34,6 @@
 		margin-top: 5px;
 		vertical-align: top;
 		font-size: 1.25em;
-	}
-	time{
-		font-family: "Source Sans Pro", sans-serif;
 	}
 	img{
 		padding: 5px;
@@ -60,6 +54,12 @@
 	hr{
 		color: #C0C0C0;
 	}
+	.titleLink{
+		transition: ease-out .25s;
+	}
+	.titleLink:hover{
+		color: #909090;
+	}
 	.artpic{
 		box-shadow: 3px 3px 5px #A0A0A0;
 		transition: linear .1s;
@@ -71,15 +71,10 @@
 		-ms-transform: rotate(1deg);
 		transform: rotate(1deg);
 	}
-	.date{
-		padding-right: 5px;
-		margin-right: 10px;
-		float: left;
-		color: #C0C0C0;
-	}
-	.content,  .date{
+	.content{
 		vertical-align: top;
-	} 
+	}
+
 	#container{
 		max-width: 40em;
 		margin-left: auto;
