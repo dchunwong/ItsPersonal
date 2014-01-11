@@ -65,7 +65,7 @@
 		box-shadow: 3px 3px 5px #A0A0A0;
 		transition: linear .1s;
 	}
-	.artpic:hover{
+	a > .artpic:hover{
 		-webkit-transform: rotate(1deg);
 		-moz-transform: rotate(1deg);
 		-o-transform: rotate(1deg);
