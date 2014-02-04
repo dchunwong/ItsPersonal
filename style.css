@@ -19,17 +19,13 @@
 	}
 	h2{
 		margin-bottom: 5px;
-		color: #707070;
+		color: #606060;
 		font-weight: 400;
 		display:inline;
-		font-size: 24px;
 		transition: linear .1s;
 	}
-	h2:hover{
-		color: #303030;
-	}
 	h1{
-		font-size: 36px;
+		font-size: 2.5em;
 		margin-bottom: 20px;
 		font-weight: 400;
 	}
@@ -39,10 +35,6 @@
 		vertical-align: top;
 		font-size: 16px;
 		line-height: 1.5em;
-		height:1.5em;
-	}
-	time{
-		font-family: "Source Sans Pro", sans-serif;
 	}
 	img{
 		padding: 5px;
@@ -63,34 +55,28 @@
 	hr{
 		color: #C0C0C0;
 	}
+	.titleLink{
+		transition: ease-out .25s;
+		color: #60718F;
+	}
+	.titleLink:hover{
+		color: #909090;
+	}
 	.artpic{
 		box-shadow: 3px 3px 5px #A0A0A0;
 		transition: linear .1s;
 	}
-	.artpic:hover{
+	a > .artpic:hover{
 		-webkit-transform: rotate(1deg);
 		-moz-transform: rotate(1deg);
 		-o-transform: rotate(1deg);
 		-ms-transform: rotate(1deg);
 		transform: rotate(1deg);
 	}
-	.date{
-		padding-right: 5px;
-		margin-right: 10px;
-		float: left;
-		color: #C0C0C0;
-	}
-	.content,  .date{
+	.content{
 		vertical-align: top;
-	} 
-	.collapse{
-		font-size: 24px;
-		float: right;
-		cursor: pointer;
 	}
-	.title{
-		display: inline;	
-	}
+
 	#container{
 		max-width: 40em;
 		margin-left: auto;
