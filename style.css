@@ -19,13 +19,17 @@
 	}
 	h2{
 		margin-bottom: 5px;
-		color: #606060;
+		color: #707070;
 		font-weight: 400;
 		display:inline;
+		font-size: 24px;
 		transition: linear .1s;
 	}
+	h2:hover{
+		color: #303030;
+	}
 	h1{
-		font-size: 2.5em;
+		font-size: 36px;
 		margin-bottom: 20px;
 		font-weight: 400;
 	}
@@ -33,8 +37,11 @@
 		font-family: "Source Sans Pro", serif;
 		margin-top: 5px;
 		vertical-align: top;
-		font-size: 16px;
-		line-height: 1.5em;
+		font-size: 24px;
+		line-height: 1.4em;
+	}
+	time{
+		font-family: "Source Sans Pro", sans-serif;
 	}
 	img{
 		padding: 5px;
@@ -55,30 +62,36 @@
 	hr{
 		color: #C0C0C0;
 	}
-	.titleLink{
-		transition: ease-out .25s;
-		color: #60718F;
-	}
-	.titleLink:hover{
-		color: #909090;
-	}
 	.artpic{
 		box-shadow: 3px 3px 5px #A0A0A0;
 		transition: linear .1s;
 	}
-	a > .artpic:hover{
+	.artpic:hover{
 		-webkit-transform: rotate(1deg);
 		-moz-transform: rotate(1deg);
 		-o-transform: rotate(1deg);
 		-ms-transform: rotate(1deg);
 		transform: rotate(1deg);
 	}
-	.content{
-		vertical-align: top;
+	.date{
+		padding-right: 5px;
+		margin-right: 10px;
+		float: left;
+		color: #C0C0C0;
 	}
-
+	.content,  .date{
+		vertical-align: top;
+	} 
+	.collapse{
+		font-size: 24px;
+		float: right;
+		cursor: pointer;
+	}
+	.title{
+		display: inline;	
+	}
 	#container{
-		max-width: 40em;
+		max-width: 50em;
 		margin-left: auto;
 		margin-right: auto;
 		transition: linear .1s;
@@ -106,10 +119,10 @@
 	strong{
 		font-weight: 600;
 	}
-	@media (max-width: 1070px){
+	@media (max-width: 1280px){
 		#sidebar{
 			position: relative;
-			max-width: 40em;
+			max-width: 50em;
 			margin-bottom: 10px;
 			padding: 0px;
 
