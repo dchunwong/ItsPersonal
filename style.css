@@ -23,6 +23,8 @@ body{
     font-family: "Raleway";
     box-sizing: border-box;
     position: absolute;
+    text-align: center;
+    overflow: auto;
 }
 #name{
     display: inline-block;

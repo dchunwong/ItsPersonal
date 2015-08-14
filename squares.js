@@ -13,7 +13,7 @@ var scaledSize = squareSize*scaling;
 var limitX = Math.round(window.innerWidth/squareSize);
 var limitY = Math.round(window.innerHeight/squareSize);
 
-// Get real square locations
+// Get real square locations relative to canvas
 function getX(x){
   return Math.floor(x*squareSize);
 }
@@ -27,11 +27,12 @@ function rgba(r, g, b, a){
   return "rgba("+ r +"," + g + "," + b + "," + a + ")";
 }
 
-// Round to the nearest square value.
+// Given n, round up the nearest multiple of k 
 function roundUp(n, k){
   return n + k - n%k;
 }
 
+// Set time outs to fade a square out with a white square
 function fadeout(x, y){
   var realX = getX(x);
   var realY = getY(y);
@@ -47,6 +48,7 @@ function fadeout(x, y){
   }, 50)
 }
 
+// Set time outs to fade a square in with a given color and opacity
 function fadein(x, y, r, g, b, count, a){
   if (typeof(count) == "undefined"){
     count = 1;
@@ -107,6 +109,7 @@ function animate(){
   animationId = requestAnimationFrame(animate);
 }
 
+// Create an empty 2D array with squares.
 function initialize(){
   for(var x = 0;x<=limitX;x++){
     rects.push([]);
@@ -116,7 +119,7 @@ function initialize(){
   }
 }
 
-// Draw all squares again
+// Draw all squares again from what is given in the 2D array.
 function redraw(){
   for(var x = 0;x<=limitX;x++){
     for(var y = 0;y<=limitY; y++){
@@ -138,16 +141,25 @@ function clearSquares(){
 // Scale size of container to fit within new square limits
 function resizeContainer(){
   if (window.innerWidth < 615){
-    container.style.top = getY(1)*scaling-2;
     container.style.left = 0;
     container.style.width = "100%";
   } else{
     var thirds = Math.floor(limitX/3)*scaling
-    container.style.top = getY(3)*scaling-2;
     container.style.left =  getX(thirds)-1;
     container.style.width = roundUp(getX(thirds), scaledSize);
   }
-  container.style.height = roundUp(tagline.offsetHeight, scaledSize);    
+  var conHeight = roundUp(tagline.offsetHeight, scaledSize);
+  container.style.height = conHeight; 
+  // Should I feel bad for doing this? I feel bad for doing this.
+  if (conHeight+getY(3)*scaling >= getY(limitY)*scaling){ 
+    container.style.top = getY(1)*scaling-2; 
+    if (conHeight + getY(1)*scaling-2 > getY(limitY)*scaling){
+      container.style.height = getY(limitY)*scaling - getY(1)*scaling-2
+    }
+  }
+  else{
+    container.style.top = getY(3)*scaling-2;
+  }
 }
 
 // Resize the canvas and set new limits on squares.
