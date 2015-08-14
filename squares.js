@@ -66,7 +66,7 @@ function fadein(x, y, r, g, b, count, a){
   }, 25)
 }
 
-
+// Draw a square within the grid.
 function draw(x, y , r, g, b, a){
     if(typeof(a) == "undefined"){
       a = 1;
@@ -77,6 +77,7 @@ function draw(x, y , r, g, b, a){
     ctx.strokeRect(getX(x), getY(y), squareSize, squareSize);
 }
 
+// Decide what color a square should be at random.
 function updateRect(rectX, rectY){
   if(typeof(rectX) == "undefined" || typeof(rectY) == "undefined"){
      rectX = Math.round(Math.random()*limitX);
@@ -115,6 +116,7 @@ function initialize(){
   }
 }
 
+// Draw all squares again
 function redraw(){
   for(var x = 0;x<=limitX;x++){
     for(var y = 0;y<=limitY; y++){
@@ -123,6 +125,7 @@ function redraw(){
   }
 }
 
+// Stop animation and delete all squares.
 function clearSquares(){
   window.cancelAnimationFrame(animationId);
   for(var x = 0;x<=limitX;x++){
@@ -132,19 +135,22 @@ function clearSquares(){
   }
 }
 
+// Scale size of container to fit within new square limits
 function resizeContainer(){
-  container.style.top = getY(3)*scaling-2;
   if (window.innerWidth < 615){
+    container.style.top = getY(1)*scaling-2;
     container.style.left = 0;
     container.style.width = "100%";
   } else{
     var thirds = Math.floor(limitX/3)*scaling
+    container.style.top = getY(3)*scaling-2;
     container.style.left =  getX(thirds)-1;
     container.style.width = roundUp(getX(thirds), scaledSize);
   }
   container.style.height = roundUp(tagline.offsetHeight, scaledSize);    
 }
 
+// Resize the canvas and set new limits on squares.
 window.onresize = function(e){
   limitX = Math.round(window.innerWidth/squareSize/scaling);
   while(limitX >= rects.length){
