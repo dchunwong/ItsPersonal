@@ -40,6 +40,11 @@
     var cardColors = [];
     var matching = null;
     var game = 0;
+    document.onclick = function(e){
+        if(cards === undefined){
+            startGame(8);
+        }
+    }
     document.onkeydown = function(e){
         if (e.keyCode == 13){
             if(!game){
