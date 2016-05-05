@@ -26,7 +26,6 @@ body{
     box-sizing: border-box;
     position: absolute;
     text-align: center;
-    overflow: auto;
     padding: 15px;
 }
 #name{

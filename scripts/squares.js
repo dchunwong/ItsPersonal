@@ -139,6 +139,10 @@ function resizeContainer(){
     container.style.width = roundUp(getX(thirds), scaledSize);
   }
   var conHeight = roundUp(nameContainer.offsetHeight, scaledSize);
+  if (conHeight > (limitY - 2) * scaledSize){
+    console.log("true");
+    conHeight = (limitY - 2) * scaledSize;
+  }
   container.style.height = conHeight; 
   // Should I feel bad for doing this? I feel bad for doing this.
   if (conHeight+getY(3)*scaling >= getY(limitY)*scaling){ 
