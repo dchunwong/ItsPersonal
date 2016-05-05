@@ -11,25 +11,126 @@
     <link rel="shortcut icon" href="pics/favicon.ico" type="image/x-icon">
     <link href='style.css' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:300,500' rel='stylesheet' type='text/css'>
-    <script src="squares.js"></script> 
+    <script src="scripts/squares.js"></script>
+    <script src="scripts/main.js"></script> 
 </head>
  <body>
  <div id="container">
-    <div id="nameContainer" v-class="opened: isOpen" class="moveMe" v-on="click: toggle()">
+    <div id="nameContainer" >
         <div id="name">
             <img src="pics/profile_alt.jpg"id="profile"></img>
             <h1>Dylan Chun Wong</h1>
-        <p> Hi! I'm currently a fourth year EECS major at UC Berkeley.
-        I have experience in web development, devops, and QA, and I have previously interned at Mozilla and Illumio. I will be starting work at Google as a Tools and Infrastructure Engineer on the Cloud Networking team this summer! In my free time I work on my deadlift and squats, run occasional half marathons, build mechanical keyboards, and play Monster Hunter.
-        </p>
-        <ul>
-            <a href="https://github.com/dchunwong"> <li> Github </li></a>
-            <a href="https://linkedin.com/in/dchunwong"><li> Linkedin </li></a>
-            <a href="resume.pdf"><li> Resume </li></a>
-            <a href="mailto:d.chunwong@berkeley.edu"><li> Email </li></a>
-        </ul> 
+            <ul>
+                <a href="#"><li> Home </li></a>     
+                <a href="#Projects"><li> Projects </li></a>
+                <a href="https://github.com/dchunwong"> <li> Github </li></a>
+                <a href="https://linkedin.com/in/dchunwong"><li> Linkedin </li></a>
+                <a href="resume.pdf"><li> Resume </li></a>
+                <a href="mailto:d.chunwong@berkeley.edu"><li> Email </li></a>
+            </ul> 
+        </div>
+        <div id="blurb" class="invisible">
+            <p> Hi! I'm currently a fourth year EECS major at UC Berkeley.
+            I have experience in web development, devops, and QA, and I have previously interned at Mozilla and Illumio. I will be starting work at Google as a Tools and Infrastructure Engineer on the Cloud Networking team this summer! In my free time I work on my deadlift and squats, run occasional half marathons, build mechanical keyboards, and play Monster Hunter.
+            </p>
+        </div>
+        <div id="projects" class="invisible">
+            <p>
+                These are some older projects that I've done in the past. Clicking the titles
+                will take you to the repo of the project if available, and clicking the thumbnails
+                will take you to demos of the projects as well.
+            </p>
+            <article>
+                <h1> Computational Photography Class </h1>
+                <div class="content">
+                    <img src='pics/pano-inside-small.jpg' class='artpic'>
+                    <p>
+                        My senior year fall semester I took a class on computational photography and image manipulation. Even though they were
+                        class projects I still like to show them because the results from just a little bit of linear algebra still amaze me.
+                        The above panorama was stitched together automatically by comparing similar images using corners as features then RANSAC to
+                        find the appropriate transformation. (<a href="https://inst.eecs.berkeley.edu/~cs194-26/fa15/upload/files/proj7B/cs194-ab/">Project Link</a>) Projects were done in either Python or MatLab depending on the problem. Other projects include,
+                        <a href="https://inst.eecs.berkeley.edu/~cs194-26/fa15/upload/files/proj4/cs194-ab/">
+                            expanding and shrinking images based on energy seams
+                        </a>,
+                        <a href="https://inst.eecs.berkeley.edu/~cs194-26/fa15/upload/files/proj6/cs194-ab/">
+                            implementing selective focusing of lightfield images</a>,
+                        and 
+                        <a href="https://inst.eecs.berkeley.edu/~cs194-26/fa15/upload/files/proj5/cs194-ab/">
+                            warping images between each other
+                        </a>. To date it is one of my favorite classes I took at Cal.
+                    </p>
+                </div>
+                <div style="clear: both"></div>
+            </article>            
+            <article>
+                <a href=https://github.com/JennyPeng/ImageBoard class = "titleLink"><h1> ImageBoard </h1></a>
+                <div class="content">
+                    <img src='pics/ImageBoardPV.PNG' class='artpic'>
+                    <p>
+                        An imageboard done with a partner over a school break to become more familiar with <strong> Node.js </strong> as well its various packages such as Express, fs, and mongodb. It features image uploads, replies, as well as hover previews and thread downloads. 
+                    </p>
+                </div>
+                <div style="clear: both"></div>
+            </article>
+            <article>
+                <a href=https://github.com/dchunwong/PixelPeople class = "titleLink"><h1> PixelPeople </h1></a>
+                <div class="content">
+                    <a href=PixelPeople><img src='pics/PixelPeople.PNG' class='artpic'></a>
+                    <p>
+                        A solo project that <strong>won first at Hackers@Berkeley's semi-annual HackJam</strong>. A static webpage that uses <strong>Javascript</strong> and the <strong>Facebook API</strong> are used to let the player move around and speak to "spirits" where they can view and like posts without context in order to eliminate bias.
+                    </p>
+                </div>
+                <div style="clear: both"></div>
+            </article>
+            <article>
+                <a href=https://github.com/melaniecebula/geo.ly class = "titleLink"><h1> Geo.ly </h1></a>
+                <div class="content">
+                    <img src='pics/GeoPV.PNG' class = 'artpic'>
+                    <p>
+                        Big Hack project made with two friends. Uses <strong>Node.js</strong> with <strong>ws, Google Maps API, and HTML/CSS</strong> to create a compass for people. Create a unique room and have friends join to plot them on a map with an arrrow directing them to you!
+                    </p>
+                </div>
+                <div style="clear: both"></div>
+            </article>
+            <article>
+                <h1> Beautiful Divs </h1>
+                <a href = test.html><img src="pics/SquarePV.PNG" class = "artpic"></a>
+                <div class="content">
+                    <p>
+                        Created as an exploration in <strong>Javascript</strong> and <strong>JQuery</strong>. Randomly generates colored squares across the current visible portion of the user's windows. Includes interchangable color schemes and different creation modes.
+                    </p>
+                </div>
+                <div style="clear: both"></div>
+            </article>
+            <article>
+                <a href=https://github.com/melaniecebula/voxel-server class = "titleLink"><h1> Voxeljs CTF </h1></a>
+                <div class="content">
+                    <p>
+                        With a team, extended an open-source voxel engine written in <strong>Javascript</strong> by adding logic for map generation, teams, team chat, and capture the flag mechanics.
+                    </p>    
+                </div>
+                <div style="clear: both"></div>
+            </article>
+            <article>
+                <a href=https://github.com/sdjidjev/ratemycat class = "titleLink"><h1> Rate My Cat </h1></a>
+                <div class="content">
+                    <a href=http://ratemycat.herokuapp.com><img src='pics/catssmall.png' class='artpic'></a>
+                    <p>
+                        A web application done in a group for a hackathon written in <strong>Python</strong> using <strong>Flask</strong> and <strong>MongoDB</strong> to implement an upload, viewing, and ranking system for pictures of cats.
+                    </p>    
+                </div>
+                <div style="clear: both"></div>
+            </article>
+            <article>
+                <h1>Snippets</h1>
+                <div class="content">
+                    <a href='CanvasLab'><img class="artpic" src="pics/CanvasPV.PNG"></a>
+                    <a href='cards'><img class="artpic" src="pics/CardsPV.PNG"></a>
+                </div>
+                <div style="clear: both"></div>
+            </article>  
         </div>
     </div>
-    <canvas id="squareCan" class="moveMe"></canvas>
  </div>
+    <canvas id="squareCan" class="moveMe"></canvas>
  </body>

@@ -2,7 +2,7 @@ var ctx;
 var canvas;
 var rects = [];
 var container;
-var tagline;
+var nameContainer;
 var scaling = 1;
 var animationId;
 var squareEdge = 25;
@@ -109,16 +109,6 @@ function animate(){
   animationId = requestAnimationFrame(animate);
 }
 
-// Create an empty 2D array with squares.
-function initialize(){
-  for(var x = 0;x<=limitX;x++){
-    rects.push([]);
-    for(var y=0;y<=limitY; y++){
-      updateRect(x, y);
-    }
-  }
-}
-
 // Draw all squares again from what is given in the 2D array.
 function redraw(){
   for(var x = 0;x<=limitX;x++){
@@ -148,7 +138,7 @@ function resizeContainer(){
     container.style.left =  getX(thirds)-1;
     container.style.width = roundUp(getX(thirds), scaledSize);
   }
-  var conHeight = roundUp(tagline.offsetHeight, scaledSize);
+  var conHeight = roundUp(nameContainer.offsetHeight, scaledSize);
   container.style.height = conHeight; 
   // Should I feel bad for doing this? I feel bad for doing this.
   if (conHeight+getY(3)*scaling >= getY(limitY)*scaling){ 
@@ -162,8 +152,30 @@ function resizeContainer(){
   }
 }
 
-// Resize the canvas and set new limits on squares.
-window.onresize = function(e){
+// Create an empty 2D array with squares.
+function initializeSquares(){
+  canvas = document.getElementById("squareCan");
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+  scaling = window.devicePixelRatio;
+  scaledSize = scaling*squareSize;
+  ctx = canvas.getContext("2d");
+  ctx.scale(scaling, scaling);
+  limitX = Math.round(limitX/scaling);
+  limitY = Math.round(limitY/scaling);
+  container = document.getElementById("container");
+  nameContainer = document.getElementById("nameContainer");
+  resizeContainer();
+  for(var x = 0;x<=limitX;x++){
+    rects.push([]);
+    for(var y=0;y<=limitY; y++){
+      updateRect(x, y);
+    }
+  }
+  animate();
+}
+
+function resizeSquaresCanvas(){
   limitX = Math.round(window.innerWidth/squareSize/scaling);
   while(limitX >= rects.length){
     rects.push([]);
@@ -178,21 +190,7 @@ window.onresize = function(e){
   resizeContainer();
 }
 
-window.onload = function(e){
-  canvas = document.getElementById("squareCan");
-  canvas.height = window.innerHeight;
-  canvas.width = window.innerWidth;
-  scaling = window.devicePixelRatio;
-  scaledSize = scaling*squareSize;
-  ctx = canvas.getContext("2d");
-  ctx.scale(scaling, scaling);
-  limitX = Math.round(limitX/scaling);
-  limitY = Math.round(limitY/scaling);
-  container = document.getElementById("nameContainer");
-  tagline = document.getElementById("name");
-  arrow = document.getElementById("arrow");
-  resizeContainer();
-  initialize();
-  animate();
-  // container.onclick = reveal;
+// Resize the canvas and set new limits on squares.
+window.onresize = function(e){
+  resizeSquaresCanvas();
 }
